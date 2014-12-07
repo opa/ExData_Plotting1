@@ -10,10 +10,10 @@ source('read_datafile.R')
 power_data <- read_data()
 
 # Open png device
-if (!DEBUG) png(filename='plots/plot2.png')
+if (!DEBUG) png(filename='plot2.png')
 
-# Make 1 line chart
-plot( power_data$date.time, # x-axis
+# create single-line chart
+plot( power_data$datetime, # x-axis
       power_data$Global_active_power,  # y-axis
       ylab= 'Global Active Power (kilowatts)', 
       xlab= '', 

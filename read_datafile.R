@@ -20,7 +20,7 @@ column_seperator = ";"
 na_string = "?"
 start_date = ymd('2007-02-01')
 end_date = ymd('2007-02-02') 
-DEBUG <- TRUE ################# SET TO FALSE TO WRITE PNG FILES, TRUE TO SEE PLOTS ON SCREEN
+DEBUG <- FALSE ################# SET TO FALSE TO WRITE PNG FILES, TRUE TO SEE PLOTS ON SCREEN
 #############################################################  
 
 
@@ -63,11 +63,10 @@ read_data <- function() {
     # use dplyr to format data as needed
     #    dplyr uses this syntax select(), filter(), arrange(), mutate(), and summarize()
     power.df <- power.df %>%
-      mutate(date.time= dmy( Date ) + hms( Time ) ,
-             weekday= day( date.time )
+      mutate(datetime= dmy( Date ) + hms( Time ) 
              ) %>% 
-      filter( date.time > start_date , 
-             date.time < ( end_date +  new_duration( day= 1) ) # add a day to include the final day in the series (e.g. to midnight that day)
+      filter( datetime > start_date , 
+             datetime < ( end_date +  new_duration( day= 1) ) # add a day to include the final day in the series (e.g. to midnight that day)
              ) 
     # Save file
     saveRDS(power.df, file='archived_data.RDS')  # Save (archive) cached version of dataset as RDS for faster subsequent calls 

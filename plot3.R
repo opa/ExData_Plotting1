@@ -10,22 +10,22 @@ source('read_datafile.R')
 power_data <- read_data()
 
 # Open png device
-if (!DEBUG) png(filename='plots/plot3.png')
+if (!DEBUG) png(filename='plot3.png')
 
 
 
-# Make 3 line chart
-plot( power_data$date.time, 
+# Make triple-line chart
+plot( power_data$datetime, 
       power_data$Sub_metering_1, 
       type='l',
       xlab='', 
       ylab='Energy sub metering'
       )
-lines( power_data$date.time, 
+lines( power_data$datetime, 
        power_data$Sub_metering_2, 
        col='red'
        )
-lines( power_data$date.time, 
+lines( power_data$datetime, 
        power_data$Sub_metering_3, 
        col='blue'
        )
