@@ -20,6 +20,7 @@ column_seperator = ";"
 na_string = "?"
 start_date = ymd('2007-02-01')
 end_date = ymd('2007-02-02') 
+pic_size <- 480
 DEBUG <- FALSE ################# SET TO FALSE TO WRITE PNG FILES, TRUE TO SEE PLOTS ON SCREEN
 #############################################################  
 

@@ -10,7 +10,14 @@ source('read_datafile.R')
 power_data <- read_data()
 
 # Open png device
-if (!DEBUG) png(filename='plot1.png')
+if (!DEBUG) png( filename= 'plot1.png', 
+                 width= pic_size, 
+                 height= pic_size, 
+                 units= "px", 
+                 pointsize= 12, 
+                 bg= "white",  
+                 res= NA
+                 )
 
 
 # plot frequency histogram
