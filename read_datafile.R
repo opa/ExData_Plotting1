@@ -11,6 +11,10 @@
 
 ###### PACKAGE DEPENDENCIES: data.table ; dplyr ; lubridate
 
+library('data.table')
+library('dplyr')
+library('lubridate')
+
 #############################################################
 ### NOTE: hardcoded assumptions here
 zip_file_url = "https://d396qusza40orc.cloudfront.net/exdata/data/household_power_consumption.zip"
@@ -21,7 +25,7 @@ na_string = "?"
 start_date = ymd('2007-02-01')
 end_date = ymd('2007-02-02') 
 pic_size <- 480
-DEBUG <- FALSE ################# SET TO FALSE TO WRITE PNG FILES, TRUE TO SEE PLOTS ON SCREEN
+DEBUG <- TRUE ################# SET TO FALSE TO WRITE PNG FILES, TRUE TO SEE PLOTS ON SCREEN
 #############################################################  
 
 
@@ -46,18 +50,13 @@ read_data <- function() {
                     method= "curl")
       unzip( zip_file_name)
     }
-    library('data.table')
     # Read data into a temp table then push into a dplyr data table
     power.dt <- read.table( data_file_name, 
                            sep= column_seperator, 
                            header= has_header, 
-                           na.strings= na_string #,
-                           # colClasses=c( rep( 'character', 2 ), 
-                           #            rep( 'numeric', 7 ) 
-                           #             )
+                           na.strings= na_string 
                            )
-    library('dplyr')
-    library('lubridate')
+
     power.df <- tbl_df( power.dt ) # use dplyr's data frame tbl
     rm( power.dt ) #remove the data table from memory to avoid confusion
   
