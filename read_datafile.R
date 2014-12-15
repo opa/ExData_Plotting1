@@ -65,7 +65,7 @@ read_data <- function() {
     power.df <- power.df %>%
       mutate(datetime= dmy( Date ) + hms( Time ) 
              ) %>% 
-      filter( datetime > start_date , 
+      filter( datetime >= start_date , 
              datetime < ( end_date +  new_duration( day= 1) ) # add a day to include the final day in the series (e.g. to midnight that day)
              ) 
     # Save file
