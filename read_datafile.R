@@ -11,7 +11,7 @@
 
 ###### THIS COURSE IS IN ENGLISH, AND DAYS NEED TO BE EXPRESSED ENGLISH MONDAY / TUESDAY etc...
 
-Sys.setlocale("LC_TIME", "English")
+Sys.setlocale(category = "LC_ALL", locale = "C")
 
 ###### PACKAGE DEPENDENCIES: data.table ; dplyr ; lubridate
 
