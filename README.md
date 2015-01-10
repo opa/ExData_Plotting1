@@ -1,3 +1,7 @@
+
+* <b>All Plots reference read_datafile.R for importing data </b>
+
+
 ## Introduction
 
 This assignment uses data from
