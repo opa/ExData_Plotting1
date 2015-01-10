@@ -2,7 +2,7 @@
 ### Coursera MOOC John Hopkins University: Exploritory Data
 
 # plot 3 - histogram
-# see read_datafile.R for notes
+# see read_datafile.R for notes ... this source imports data for all plots
 
 source('read_datafile.R')
 

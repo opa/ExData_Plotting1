@@ -9,6 +9,10 @@
         # saves the recordset to the drive for future needs using RDS
         # RDS is R's way of storing a single R object to the hard drive
 
+###### THIS COURSE IS IN ENGLISH, AND DAYS NEED TO BE EXPRESSED ENGLISH MONDAY / TUESDAY etc...
+
+Sys.setlocale("LC_TIME", "English")
+
 ###### PACKAGE DEPENDENCIES: data.table ; dplyr ; lubridate
 
 library('data.table')

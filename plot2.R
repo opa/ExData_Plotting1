@@ -1,8 +1,8 @@
 ### Bruce Pezzlo 7 Dec  2015
 ### Coursera MOOC John Hopkins University: Exploritory Data
 
-# plot 3 - histogram
-# see read_datafile.R for notes
+# plot 2 - histogram
+# see read_datafile.R for notes ... this source imports data for all plots
 
 source('read_datafile.R')
 
